@@ -2,7 +2,7 @@
 
 set -e # stop on failure
 cd $(dirname $0) # go to script dir
-echo $GIT_PARAMS
+
 source ./utils.sh
 
 version_number=$1
