@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "precommit": "npm test",
+    "precommit": "npm install && npm test",
+    "postcommit": "npm run release",
     "release": "./scripts/release.sh",
     "start": "node src/server.js",
     "test": "jest || true",
