@@ -27,7 +27,9 @@
     "nodemon": "latest"
   },
   "husky": {
-    "precommit": "npm install && npm test",
-    "postcommit": "make release"
+    "hooks": {
+      "precommit": "npm install && npm test",
+      "postcommit": "make release"
+    }
   }
 }
