@@ -1,0 +1,30 @@
+{
+  "name": "starter-api-ts",
+  "version": "0.0.0",
+  "description": "starting point of a new api",
+  "private": true,
+  "engines": {
+    "node": "^8",
+    "npm": "^5.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "precommit": "npm test",
+    "release": "./scripts/release.sh",
+    "start": "node src/server.js",
+    "test": "jest || true",
+    "version:current": "./scripts/current-version.sh"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "lodash": "latest"
+  },
+  "devDependencies": {
+    "husky": "latest",
+    "jest": "latest",
+    "nodemon": "latest"
+  }
+}
