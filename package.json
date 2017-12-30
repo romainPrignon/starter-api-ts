@@ -11,8 +11,7 @@
     "build": "tsc",
     "release": "./scripts/release.sh",
     "start": "node src/server.js",
-    "test": "jest || true",
-    "version:current": "./scripts/current-version.sh"
+    "test": "jest || true"
   },
   "dependencies": {
     "body-parser": "latest",
@@ -28,8 +27,8 @@
   },
   "husky": {
     "hooks": {
-      "precommit": "npm install && npm test",
-      "postcommit": "make release"
+      "pre-commit": "npm install && npm test",
+      "post-commit": "make release"
     }
   }
 }
