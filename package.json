@@ -9,8 +9,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "precommit": "npm install && npm test",
-    "postcommit": "npm run release",
     "release": "./scripts/release.sh",
     "start": "node src/server.js",
     "test": "jest || true",
@@ -24,8 +22,12 @@
     "lodash": "latest"
   },
   "devDependencies": {
-    "husky": "latest",
+    "husky": "0.15.0-beta.16",
     "jest": "latest",
     "nodemon": "latest"
+  },
+  "husky": {
+    "precommit": "npm install && npm test",
+    "postcommit": "make release"
   }
 }
