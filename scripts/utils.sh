@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function get_current_version {
-  node -p -e "require('../package.json').version"
+  node -p -e "require('./package.json').version"
 }
 
 function get_last_commit {
