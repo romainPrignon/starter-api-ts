@@ -6,10 +6,8 @@ ENV PORT $PORT
 ENV PATH /opt/node_modules/.bin:$PATH
 
 
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install && npm cache clean --force
 COPY . /opt
+RUN npm install && npm cache clean --force
 
 
 EXPOSE $PORT 5858 9229

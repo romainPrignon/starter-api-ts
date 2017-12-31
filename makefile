@@ -14,8 +14,8 @@ container_name=$(organization)_$(service)
 # add registry variable
 # use compose instead of docker ?
 
-build: ## build the service using semver (semver.org) ex: make build tag=1.1.2
-	docker build -t $(image_name):$(tag) .
+build: ## build the service using latest tag
+	docker build -t $(image_name):latest .
 
 run: ## run a service ex: make run tag=1.1.2
 	docker run -dit \
@@ -26,9 +26,11 @@ run: ## run a service ex: make run tag=1.1.2
 push: ## push to the public registry ex: make push tag=1.1.2
 	docker push $(image_name):$(tag)
 
+pre-release: ## prepare a docker image
+	make build
+
 release: ## release a tagged docker image ex: make release tag=1.1.2 or make release
-	./scripts/release.sh $(shell ./scripts/version.sh $(tag))
-	make build tag=$(shell ./scripts/version.sh $(tag))
+	make tag tag=$(shell ./scripts/version.sh $(tag))
 	make push tag=$(shell ./scripts/version.sh $(tag))
 
 help:

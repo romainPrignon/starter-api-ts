@@ -25,6 +25,17 @@ npm test
 ```
 All Tests use Jest framework. tests are in  `*.test.js` files
 
+### Release
+```sh
+npm run release
+```
+will create a git tag x.x.x-yyy where `x` is semver and `y` is last commit sh1
+
+```sh
+npm run release -- 1.3.2
+```
+will createa git tag 1.3.2 on current git HEAD
+
 ## Docker
 Every docker related command are in the `makefile` file
 

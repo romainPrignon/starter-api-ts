@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "prerelease": "echo 'one could modify npm version'",
     "release": "./scripts/release.sh",
     "start": "node src/server.js",
     "test": "jest || true"
@@ -27,8 +28,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm install && npm test",
-      "post-commit": "make release"
+      "pre-commit": "npm run prerelease && make pre-release",
+      "post-commit": "npm run release && make release"
     }
   }
 }
