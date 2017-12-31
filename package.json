@@ -9,7 +9,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "release": "./scripts/release.sh",
+    "release:major": "./scripts/release.sh major",
+    "release:minor": "./scripts/release.sh minor",
+    "release:patch": "./scripts/release.sh patch",
     "release:push": "./scripts/push-release.sh",
     "release:prepare": "./scripts/prepare-release.sh",
     "start": "node src/server.js",
@@ -29,7 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "post-commit": "npm run release:prepare && make prepare-release",
+      "post-commit": "npm run release:tag && make prepare-release",
       "pre-push": "npm run release:push && make push-release"
     }
   }
