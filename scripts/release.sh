@@ -2,11 +2,13 @@
 
 set -e # stop on failure
 
-tag=$(npm version $1)
+source ./scripts/utils.sh
 
-git add package.json
-#git commit -m "Release $tag"
-echo "Release $tag"
-#./scripts/prepare-release.sh $tag
-#./scripts/push-release.sh
+npm version --no-git-tag-version $1
+tag=$(get_current_version)
+git add package.json package-lock.json
+git commit -m "Release $tag"
+
+./scripts/prepare-release.sh $tag
+./scripts/push-release.sh
 

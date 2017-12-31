@@ -48,3 +48,4 @@ Every docker related command are in the `makefile` file
 - [ ] faire image docker au precommit ?
 - [ ] quel utilité pour le tag version-commit ?
 - [ ] faire manual release qui modifie version package.json
+- [ ] unifier les scripts (inclure docker by default)
