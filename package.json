@@ -9,8 +9,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "prerelease": "echo 'one could modify npm version'",
     "release": "./scripts/release.sh",
+    "release:push": "./scripts/push-release.sh",
+    "release:prepare": "./scripts/prepare-release.sh",
+    "release:tag": "./scripts/tag-release.sh",
     "start": "node src/server.js",
     "test": "jest || true"
   },
@@ -28,8 +30,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prerelease && make pre-release",
-      "post-commit": "npm run release && make release"
+      "pre-commit": "npm run release:prepare",
+      "post-commit": "npm run release:tag",
+      "pre-push": "npm run release:push"
     }
   }
 }

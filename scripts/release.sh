@@ -2,7 +2,7 @@
 
 set -e # stop on failure
 
-version_number=$(./scripts/version.sh $1)
+./scripts/prepare-release.sh
+./scripts/tag-release.sh $1
+./scripts/push-release.sh
 
-git tag -f -a $version_number -m "Release $version_number"
-git push -f --tags
