@@ -12,7 +12,6 @@
     "release": "./scripts/release.sh",
     "release:push": "./scripts/push-release.sh",
     "release:prepare": "./scripts/prepare-release.sh",
-    "release:tag": "./scripts/tag-release.sh",
     "start": "node src/server.js",
     "test": "jest || true"
   },
@@ -30,8 +29,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run release:prepare",
-      "post-commit": "npm run release:tag",
+      "post-commit": "npm run release:prepare",
       "pre-push": "npm run release:push"
     }
   }
