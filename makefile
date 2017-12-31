@@ -1,6 +1,6 @@
 .DEFAULT_GOAL: help
-.SILENT: help run run-latest build tag push release
-.PHONY: help run run-latest build tag push release
+.SILENT: help build push run prepare-release push-release release
+.PHONY: help build push run prepare-release push-release release
 
 include .env
 
