@@ -47,3 +47,4 @@ Every docker related command are in the `makefile` file
 - [ ] faire que dans un makefile ?
 - [ ] faire image docker au precommit ?
 - [ ] quel utilité pour le tag version-commit ?
+- [ ] faire manual release qui modifie version package.json
