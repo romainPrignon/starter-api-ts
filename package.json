@@ -32,7 +32,7 @@
     "hooks": {
       "pre-commit": "npm run release:prepare",
       "post-commit": "npm run release:tag",
-      "pre-push": "npm run release:push"
+      "post-push": "npm run release:push"
     }
   }
 }
