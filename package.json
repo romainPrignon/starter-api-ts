@@ -1,6 +1,6 @@
 {
   "name": "starter-api-ts",
-  "version": "0.2.0",
+  "version": "0.2.0-6bd8c9c",
   "description": "starting point of a new api",
   "private": true,
   "engines": {
@@ -30,9 +30,6 @@
     "nodemon": "latest"
   },
   "husky": {
-    "hooks": {
-      "post-commit": "npm run release:prepare && make prepare-release",
-      "pre-push": "npm run release:push && make push-release"
-    }
+    "hooks": {}
   }
 }
