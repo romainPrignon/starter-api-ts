@@ -1,6 +1,6 @@
 {
   "name": "starter-api-ts",
-  "version": "0.2.0-6bd8c9c",
+  "version": "0.2.0",
   "description": "starting point of a new api",
   "private": true,
   "engines": {
