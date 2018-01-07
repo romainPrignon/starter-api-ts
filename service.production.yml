@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  api:
+    image: ${DOCKER_IMAGE}:0.2.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - tag
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+      - production.env

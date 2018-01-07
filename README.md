@@ -44,8 +44,10 @@ Every docker related command are in the `makefile` file
 [lodash](https://lodash.com/docs)
 
 ## TODO
-- [ ] faire que dans un makefile ?
-- [ ] faire image docker au precommit ?
-- [ ] quel utilité pour le tag version-commit ?
-- [ ] faire manual release qui modifie version package.json
-- [ ] unifier les scripts (inclure docker by default)
+- use makefile instead of bash ?
+- use node script instead of bash ?
+- unset DOCKER_TLS_VERIFY
+  unset DOCKER_HOST
+  unset DOCKER_CERT_PATH
+- test-release ?
+
