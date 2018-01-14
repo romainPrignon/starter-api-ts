@@ -1,5 +1,8 @@
 version: '3.2'
 
+volumes:
+  api:
+
 services:
   api:
     image: ${DOCKER_IMAGE}:0.2.1
@@ -10,6 +13,10 @@ services:
         - tag
     ports:
       - "${PORT}:${PORT}"
+    volumes:
+      - type: volume
+        source: api
+        target: /opt
     env_file:
       - .env
       - production.env

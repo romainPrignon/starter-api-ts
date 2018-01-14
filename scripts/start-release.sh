@@ -8,7 +8,7 @@ import_env
 
 # script's arguments
 env=${1-"production"}
-stack_name=${DOCKER_STACK_NAME}_${env}
+stack_name=${DOCKER_STACK_FULLNAME}_${env}
 
 # script
 case $env in
