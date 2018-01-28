@@ -4,7 +4,7 @@ set -e # stop on failure
 
 # private function
 function get_package_version {
-  node -p "require('../package.json').version"
+  node -p "require('./package.json').version"
 }
 
 # script's arguments
