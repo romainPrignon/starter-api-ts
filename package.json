@@ -13,7 +13,7 @@
     "build": "tsc",
     "lint": "tslint",
     "test": "jest || true",
-    "release": "release-it"
+    "tag": "release-it"
   },
   "dependencies": {
     "body-parser": "latest",

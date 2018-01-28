@@ -31,15 +31,23 @@ npm run test
 ```
 All Tests use Jest framework. tests are in  `*.test.js` files
 
+### Tag
+```sh
+npm run tag -- patch
+npm run tag -- minor
+npm run tag -- major
+npm run tag -- x.y.z
+```
+It use release-it to release a git tagged version of the application
+
 ### Release
 ```sh
-npm run release
-npm run release -- patch
-npm run release -- minor
-npm run release -- major
-npm run release -- x.y.z
+./scripts/release.sh patch
+./scripts/release.sh minor
+./scripts/release.sh major
+./scripts/release.sh x.y.z
 ```
-Use release-it to release a git tagged version of the application
+The final step. Make a git tag using release-it then build and push a tagged docker image
 
 ### Start
 ```sh
