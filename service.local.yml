@@ -1,9 +1,0 @@
-version: '3.2'
-
-services:
-  api:
-    env_file:
-      - .env
-      - local.env
-    volumes:
-      - .:/opt

@@ -1,0 +1,10 @@
+{
+    "non-interactive": true,
+    "dry-run": false,
+    "verbose": true,
+    "increment": "patch",
+    "buildCommand": "npm run build",
+    "npm": {
+        "publish": false
+    }
+}

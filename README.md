@@ -15,13 +15,19 @@ git remote add origin <repo_url>
 
 ### Develop
 ```sh
-npm start
+npm run dev
 ```
 Application will be running on: [http://localhost:4000](http://localhost:4000)
 
+### Build
+```sh
+npm run build
+```
+Build application using typescript
+
 ### Test
 ```sh
-npm test
+npm run test
 ```
 All Tests use Jest framework. tests are in  `*.test.js` files
 
@@ -29,25 +35,23 @@ All Tests use Jest framework. tests are in  `*.test.js` files
 ```sh
 npm run release
 ```
-will create a git tag x.x.x-yyy where `x` is semver and `y` is last commit sh1
+Use release-it to release a git tagged version of the application
 
+### Start
 ```sh
-npm run release -- 1.3.2
+npm run start
 ```
-will createa git tag 1.3.2 on current git HEAD
+Start the application locally using production env params (.env.prod)
 
 ## Docker
-Every docker related command are in the `makefile` file
+Every docker related command are in the `makefile` file.
+```sh
+make help
+```
 
 ## Further docs
 [express](http://expressjs.com/en/4x/api.html)
 [lodash](https://lodash.com/docs)
+[dotenv](https://github.com/motdotla/dotenv)
 
-## TODO
-- use makefile instead of bash ?
-- use node script instead of bash ?
-- unset DOCKER_TLS_VERIFY
-  unset DOCKER_HOST
-  unset DOCKER_CERT_PATH
-- test-release ?
-
+[jest](https://facebook.github.io/jest/docs/en/getting-started.html)

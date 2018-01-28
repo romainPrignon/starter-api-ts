@@ -1,6 +1,6 @@
 {
   "name": "starter-api-ts",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "starting point of a new api",
   "private": true,
   "engines": {
@@ -8,13 +8,12 @@
     "npm": "^5.3"
   },
   "scripts": {
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "start": "NODE_ENV=production node src/server.js",
     "build": "tsc",
-    "release:major": "./scripts/release.sh major",
-    "release:minor": "./scripts/release.sh minor",
-    "release:patch": "./scripts/release.sh patch",
-    "release:start": "./scripts/start-release.sh",
-    "start": "node src/server.js",
-    "test": "jest || true"
+    "lint": "tslint",
+    "test": "jest || true",
+    "release": "release-it"
   },
   "dependencies": {
     "body-parser": "latest",
@@ -24,15 +23,14 @@
     "lodash": "latest"
   },
   "devDependencies": {
-    "husky": "0.15.0-beta.16",
+    "husky": "0.15.0-rc.3",
     "jest": "latest",
-    "nodemon": "latest"
+    "nodemon": "latest",
+    "release-it": "latest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
-      "post-commit": "./scripts/build-release.sh",
-      "pre-push": "./scripts/push-release.sh"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }
