@@ -34,6 +34,10 @@ All Tests use Jest framework. tests are in  `*.test.js` files
 ### Release
 ```sh
 npm run release
+npm run release -- patch
+npm run release -- minor
+npm run release -- major
+npm run release -- x.y.z
 ```
 Use release-it to release a git tagged version of the application
 
