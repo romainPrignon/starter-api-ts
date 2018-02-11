@@ -1,6 +1,6 @@
 .DEFAULT_GOAL: help
-.SILENT: help dev start stop build push
-.PHONY: help dev start stop build push
+.SILENT: help install dev start stop build push
+.PHONY: help install dev start stop build push
 
 include .env
 
@@ -10,6 +10,9 @@ tag ?= latest
 
 help:
 	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-10s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
+
+install: ## install dependencies ex: make install
+	npm install
 
 dev: ## run a docker image ready for development ex: make dev [tag=1.1.2]
 	docker run --rm -it \
