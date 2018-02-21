@@ -12,7 +12,7 @@ human_readable_tag=$1
 
 [[ -z "$human_readable_tag" ]] && { echo "Error: tag required" ; exit 1; }
 
-npm run tag -- $human_readable_tag
+npm run release -- $human_readable_tag
 
 tag=$(get_package_version)
 

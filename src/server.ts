@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
-const os = require('os');
+const os = require('os')
 
 const app = express()
 
@@ -25,21 +25,21 @@ const server = app.listen(process.env.PORT, () => {
 const exitSuccess = () => {
   // server.close() // make it awaitable !
   console.info(`Exit ${os.hostname()} successfully`)
-  process.exit(0);
+  process.exit(0)
 }
 
 const exitFailure = (err) => {
-    console.error(`UncaughtException on ${os.hostname()}`)
-    console.error(err.stack)
-    process.exit(1)
+  console.error(`UncaughtException on ${os.hostname()}`)
+  console.error(err.stack)
+  process.exit(1)
 }
 
 process.on('SIGTERM', () => {
-    exitSuccess()
+  exitSuccess()
 })
 process.on('uncaughtException', (err) => {
-    exitFailure(err)
+  exitFailure(err)
 })
 process.on('unhandledRejection', (err) => {
-    exitFailure(err)
+  exitFailure(err)
 })

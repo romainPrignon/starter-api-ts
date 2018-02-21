@@ -15,14 +15,14 @@ install: ## install dependencies ex: make install
 	npm install
 
 dev: ## run a docker image ready for development ex: make dev [tag=1.1.2]
-	docker run --rm -it \
+	docker run --rm -it --init \
 		--name ${container_name} \
 		-p ${PORT}:${PORT} \
 		-v ${PWD}:/opt \
 		${image_name}:${tag} npm run dev
 
 start: ## run a docker image ex: make start [tag=1.1.2]
-	docker run --rm -it \
+	docker run --rm -it --init \
 		--name ${container_name} \
 		-p ${PORT}:${PORT} \
 		${image_name}:${tag}
