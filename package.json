@@ -3,8 +3,6 @@
   "version": "0.4.0",
   "description": "starting point of a new api",
   "private": true,
-  "main": "dist/server.js",
-  "types": "type/server.d.ts",
   "engines": {
     "node": "^8",
     "npm": "^5.3"
@@ -12,11 +10,11 @@
   "scripts": {
     "build": "rm -rf dist/ && tsc",
     "build:dev": "tsc --noEmit --pretty",
-    "dev": "NODE_ENV=development nodemon src/server.js",
+    "dev": "NODE_ENV=development nodemon",
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "tslint --project tsconfig.json",
     "lint:test": "tslint --project test/tsconfig.json",
-    "start": "NODE_ENV=production node src/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "release": "release-it",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
@@ -31,15 +29,17 @@
     "rxjs": "6.0.0-alpha.3"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.104",
+    "@types/express": "latest",
+    "@types/lodash": "latest",
     "@types/node": "8.9.4",
     "husky": "0.15.0-rc.3",
     "jest": "latest",
     "nodemon": "latest",
     "release-it": "latest",
-    "tslint": "5.9.1",
-    "tslint-config-standard": "7.0.0",
-    "typescript": "2.7.2"
+    "ts-node": "latest",
+    "tslint": "latest",
+    "tslint-config-standard": "latest",
+    "typescript": "latest"
   },
   "husky": {
     "hooks": {

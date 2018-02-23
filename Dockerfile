@@ -2,7 +2,8 @@ FROM node:8
 
 WORKDIR /opt
 
-
+COPY .env .env
+COPY .env.prod .env.prod
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 COPY dist dist

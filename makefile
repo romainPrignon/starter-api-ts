@@ -31,6 +31,7 @@ stop: ## stop the latest image ex: make stop
 	docker stop ${container_name}
 
 build: ## build a docker image ex: make build [tag=1.1.2]
+	npm run build
 	docker build -t ${image_name}:${tag} .
 
 push: ## push docker latest image to registry ex: make release [tag=1.1.2]
