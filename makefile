@@ -1,6 +1,6 @@
 .DEFAULT_GOAL: help
-.SILENT: help install dev start stop build push
-.PHONY: help install dev start stop build push
+.SILENT: help install dev start stop build push release
+.PHONY: help install dev start stop build push release
 
 include .env
 
@@ -22,7 +22,7 @@ dev: ## run a docker image ready for development ex: make dev [tag=1.1.2]
 		${image_name}:${tag} npm run dev
 
 start: ## run a docker image ex: make start [tag=1.1.2]
-	docker run --rm -it --init \
+	docker run --rm -dit --init \
 		--name ${container_name} \
 		-p ${PORT}:${PORT} \
 		${image_name}:${tag}
@@ -31,8 +31,9 @@ stop: ## stop the latest image ex: make stop
 	docker stop ${container_name}
 
 build: ## build a docker image ex: make build [tag=1.1.2]
-	npm run build
 	docker build -t ${image_name}:${tag} .
 
-push: ## push docker latest image to registry ex: make release [tag=1.1.2]
+push: ## push docker latest image to registry ex: make push [tag=1.1.2]
 	docker push ${image_name}:${tag}
+
+release: build push ## release project as docker image ex: make release [tag=1.1.2]

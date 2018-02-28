@@ -3,14 +3,11 @@
     "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "../dist",
     "declaration": true,
     "sourceMap": true,
     "noEmitHelpers": true,
     "removeComments": false,
     "strict": true
-  },
-  "include": [
-    "src/**/*"
-  ]
+  }
 }

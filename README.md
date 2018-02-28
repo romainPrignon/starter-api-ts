@@ -1,6 +1,6 @@
 # starter-api-ts
 
-Starting point of a new api
+Starting point of a new api in order to achieve RAD (rapid application development)
 
 ## Installation
 ```sh
@@ -31,30 +31,22 @@ npm run build
 ```
 Build application using typescript
 
+### Lint
+```sh
+npm run lint
+```
+
 ### Test
 ```sh
 npm run test
 ```
 All Tests use Jest framework. tests are in  `*.test.js` files
 
-### Tag
+## Release
 ```sh
-npm run release -- patch
-npm run release -- minor
-npm run release -- major
-npm run release -- x.y.z
-```
-It use release-it to release a git tagged version of the application
-
-### Release
-```sh
-./scripts/release.sh patch
-./scripts/release.sh minor
-./scripts/release.sh major
-./scripts/release.sh x.y.z
+make release tag=x.y.z
 ```
 The final step.
-Make a git tag using release-it (same as `npm run release`)
 Build and push a tagged docker image
 
 ## Docker
@@ -70,3 +62,23 @@ make help
 [rxjs](https://github.com/reactivex/rxjs)
 
 [jest](https://facebook.github.io/jest/docs/en/getting-started.html)
+
+## TODO
+ * find best file structure
+ * use starter-package-ts
+ * add test
+ * multi-staged docker build
+ * debug (test et start)
+ * functionnal
+   * auth
+   * trad
+   * search
+ * technical
+   * better than express ? (http2, ...)
+   * router
+   * route validation
+   * choose a database (search, see needed feature in db memo)
+   * DAL or ORM ?
+   * logger (error, in/out, dependencies)
+   * security (helmet)
+   * use expose in docker run (in makefile)

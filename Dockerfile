@@ -6,12 +6,12 @@ COPY .env .env
 COPY .env.prod .env.prod
 COPY package.json package.json
 COPY package-lock.json package-lock.json
-COPY dist dist
+COPY src src
 
-RUN npm install --production
+RUN npm install
+RUN npm run build
 
-ENV PATH /opt/node_modules/.bin:$PATH
-EXPOSE 4000 5858 9229
+ENV PATH=/opt/node_modules/.bin:$PATH
 USER node
 
 CMD ["npm", "start"]
