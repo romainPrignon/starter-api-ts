@@ -1,8 +1,5 @@
-import { resolve } from 'path'
-const env = process.env.NODE_ENV === 'development' ? 'local' : 'prod'
-
-require('dotenv').config()
-require('dotenv').config({ path: resolve(process.cwd(), `.env.${env}`) })
+import { loadConfig } from '../app'
+loadConfig()
 
 import * as express from 'express'
 import { hostname } from 'os'
@@ -34,7 +31,8 @@ const exitSuccess = () => {
 
 const exitFailure = (err: Error) => {
   console.error(`UncaughtException on ${hostname()}`)
-  console.error(err.stack)
+  console.error(err)
+
   process.exit(1)
 }
 

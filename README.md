@@ -65,16 +65,26 @@ make help
 
 ## TODO
  * find best file structure
+  * controllers
+  * services
+  * repositories
+  * models
+  * views
+  * utils
+  * migrations
  * use starter-package-ts
  * add test
  * multi-staged docker build
+ * PM2 ?
  * debug (test et start)
+ * DDD
  * functionnal
    * auth
    * trad
    * search
+   * multi-datastore
  * technical
-   * better than express ? (http2, ...)
+   * HTTP2
    * router
    * route validation
    * choose a database (search, see needed feature in db memo)
