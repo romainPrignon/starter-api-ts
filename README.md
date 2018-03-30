@@ -62,33 +62,3 @@ make help
 [rxjs](https://github.com/reactivex/rxjs)
 
 [jest](https://facebook.github.io/jest/docs/en/getting-started.html)
-
-## TODO
- * find best file structure
-  * controllers
-  * services
-  * repositories
-  * models
-  * views
-  * utils
-  * migrations
- * use starter-package-ts
- * add test
- * multi-staged docker build
- * PM2 ?
- * debug (test et start)
- * DDD
- * functionnal
-   * auth
-   * trad
-   * search
-   * multi-datastore
- * technical
-   * HTTP2
-   * router
-   * route validation
-   * choose a database (search, see needed feature in db memo)
-   * DAL or ORM ?
-   * logger (error, in/out, dependencies)
-   * security (helmet)
-   * use expose in docker run (in makefile)
