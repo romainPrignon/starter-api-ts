@@ -1,4 +1,4 @@
-import {RequestHandler, Request, Response, NextFunction} from 'express'
+import { RequestHandler, Request, Response, NextFunction } from 'express'
 
 export const will = (fn: RequestHandler) =>
   (req: Request, res: Response, next: NextFunction) =>

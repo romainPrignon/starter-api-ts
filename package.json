@@ -9,12 +9,10 @@
   },
   "types": "type/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist/ && tsc --project src/tsconfig.json",
-    "build:dev": "tsc --project src/tsconfig.json --noEmit --pretty",
+    "build": "rm -rf dist/ && tsc",
+    "build:dev": "tsc --noEmit --pretty",
     "dev": "NODE_ENV=development nodemon",
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "tslint --project src/tsconfig.json",
-    "lint:test": "tslint --project test/tsconfig.json",
+    "lint": "tslint --project tsconfig.json",
     "start": "NODE_ENV=production node dist/src/index.js",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
@@ -29,6 +27,7 @@
     "rxjs": "beta"
   },
   "devDependencies": {
+    "@types/cors": "2.8.4",
     "@types/express": "latest",
     "@types/lodash": "latest",
     "@types/node": "8.9.4",

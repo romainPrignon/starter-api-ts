@@ -1,6 +1,6 @@
 import {Server} from 'http'
 
-export type ExpressServer = {
+export type AppServer = {
   start: () => Promise<Server>
   stop: () => Promise<Server>
 }

@@ -1,8 +1,8 @@
 import { Application } from 'express'
 import { Server } from 'http'
-import { ExpressServer } from '../../type/index'
+import { AppServer } from '../../type/index'
 
-const expressServer = (app: Application): ExpressServer => {
+const appServer = (app: Application): AppServer => {
   let server: Server
 
   return {
@@ -18,4 +18,4 @@ const expressServer = (app: Application): ExpressServer => {
     }
   }
 }
-export default expressServer
+export default appServer

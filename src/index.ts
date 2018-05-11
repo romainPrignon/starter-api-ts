@@ -2,10 +2,10 @@ import { loadConfig } from '../internal/config'
 import makeProcessExit from '../internal/exit'
 
 import app from './application/app'
-import expressServer from './application/server'
+import appServer from './application/server'
 
 loadConfig()
-const server = expressServer(app)
+const server = appServer(app)
 
 const main = async () => {
   const httpServer = await server.start()
