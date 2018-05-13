@@ -11,7 +11,7 @@
   "scripts": {
     "build": "rm -rf dist/ && tsc",
     "build:dev": "tsc --noEmit --pretty",
-    "dev": "NODE_ENV=development nodemon",
+    "dev": "NODE_ENV=development nodemon -w src -e ts -x 'ts-node --require dotenv/config ./src/index.ts'",
     "lint": "tslint --project tsconfig.json",
     "start": "NODE_ENV=production node dist/src/index.js",
     "test": "jest",

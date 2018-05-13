@@ -2,6 +2,11 @@ import { Request, Response } from 'express'
 
 import { hostname } from 'os'
 
+import config from '../../../internal/config'
+
 export const getHealth = (req: Request, res: Response): Response => {
-  return res.send(`hello from ${hostname()} with ENV_BASED_VAR: ${process.env.ENV_BASED_VAR} !`)
+  return res.send(`hello from ${hostname()} with
+    OVERRIDE_BY_ENV: ${config.OVERRIDE_BY_ENV}
+    SECRET_VAR: ${config.SECRET_VAR}
+  `)
 }

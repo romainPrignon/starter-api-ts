@@ -2,13 +2,16 @@ import { Application } from 'express'
 import { Server } from 'http'
 import { AppServer } from '../../type/index'
 
+import config from '../../internal/config'
+import { copyFile } from 'fs';
+
 const appServer = (app: Application): AppServer => {
   let server: Server
 
   return {
     start: async () => {
-      server = app.listen(process.env.PORT, () => {
-        console.info(`listening on port ${process.env.PORT}`)
+      server = app.listen(config.PORT, () => {
+        console.info(`listening on port ${config.PORT}`)
       })
 
       return server

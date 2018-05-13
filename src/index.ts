@@ -1,13 +1,11 @@
-import { loadConfig } from '../internal/config'
 import makeProcessExit from '../internal/exit'
 
 import app from './application/app'
-import appServer from './application/server'
-
-loadConfig()
-const server = appServer(app)
+import appServer from './application/appServer'
 
 const main = async () => {
+  const server = appServer(app)
+
   const httpServer = await server.start()
   const { processExitSuccess, processExitFailure } = makeProcessExit(httpServer)
 
