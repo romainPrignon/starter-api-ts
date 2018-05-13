@@ -13,7 +13,7 @@
     "build:dev": "tsc --noEmit --pretty",
     "dev": "NODE_ENV=development nodemon -w src -e ts -x 'ts-node --require dotenv/config ./src/index.ts'",
     "lint": "tslint --project tsconfig.json",
-    "start": "NODE_ENV=production node dist/src/index.js",
+    "start": "NODE_ENV=production node --require dotenv/config dist/src/index.js",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"

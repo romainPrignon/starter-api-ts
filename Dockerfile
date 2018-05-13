@@ -4,8 +4,11 @@ WORKDIR /opt
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
-COPY src src
+COPY tsconfig.json tsconfig.json
+COPY config config
 COPY internal internal
+COPY src src
+COPY type type
 
 RUN npm install --no-optional
 RUN npm run build
@@ -13,9 +16,6 @@ RUN npm run build
 FROM node:8
 
 WORKDIR /opt
-
-COPY .env .env
-COPY .env.prod .env.prod
 
 COPY --from=build /opt/package.json package.json
 COPY --from=build /opt/dist dist
