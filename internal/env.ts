@@ -3,7 +3,7 @@ import raise from './raise'
 const isValid = (env: string): boolean =>
   env === 'development' || env === 'production'
 
-const getEnv = (): string | never => {
+const getEnv = (): string => {
   const { NODE_ENV } = process.env
 
   if (!NODE_ENV) return raise('ERR_INTERNAL_NODE_ENV_UNDEFINED', 'env variable "NODE_ENV" is undefined')
