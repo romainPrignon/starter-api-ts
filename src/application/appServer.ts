@@ -3,7 +3,6 @@ import { Server } from 'http'
 import { AppServer } from '../../type/index'
 
 import config from '../../internal/config'
-import { copyFile } from 'fs';
 
 const appServer = (app: Application): AppServer => {
   let server: Server
