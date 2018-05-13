@@ -1,31 +1,31 @@
-import makeProcessExit from '../internal/exit'
+import exit from '../internal/exit'
 
+import AppServer from './application/AppServer'
 import app from './application/app'
-import appServer from './application/appServer'
 
 const main = async () => {
-  const server = appServer(app)
+  const appServer = AppServer(app)
 
-  const httpServer = await server.start()
-  const { processExitSuccess, processExitFailure } = makeProcessExit(httpServer)
+  try {
+    await appServer.start()
+  } catch (err) {
+    await appServer.stop()
 
-  process.on('SIGINT', () => {
-    processExitSuccess()
-  })
-  process.on('SIGTERM', () => {
-    processExitSuccess()
-  })
-  process.on('uncaughtException', (err) => {
-    processExitFailure(err)
-  })
-  process.on('unhandledRejection', (err) => {
-    processExitFailure(err)
-  })
+    exit(err)
+  }
 }
 
+process.on('SIGINT', () => {
+  exit()
+})
+process.on('SIGTERM', () => {
+  exit()
+})
+process.on('uncaughtException', (err) => {
+  exit(err)
+})
+process.on('unhandledRejection', (err) => {
+  exit(err)
+})
+
 main()
-  .catch((err) => {
-    console.error('Panic !')
-    console.error(err)
-  }
-)

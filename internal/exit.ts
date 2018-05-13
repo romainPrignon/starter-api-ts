@@ -1,23 +1,16 @@
-import { Server } from 'http'
-
 import { hostname } from 'os'
 
-const makeProcessExit = (httpServer: Server) => ({
-  processExitSuccess: () => {
-    httpServer.close(() => {
-      console.info(`${hostname()}: Exit properly`)
+const exit = (err?: Error): void => {
+  if (err) {
+    console.error(`${hostname()}: ERROR`)
+    console.error(err)
 
-      process.exit(0)
-    })
-  },
-  processExitFailure: (err: Error) => {
-    httpServer.close(() => {
-      console.error(`${hostname()}: Uncaught exception`)
-      console.error(err)
+    process.exit(1)
+  } else {
+    console.info(`${hostname()}: Exit properly`)
 
-      process.exit(1)
-    })
+    process.exit(0)
   }
-})
+}
 
-export default makeProcessExit
+export default exit
