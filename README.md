@@ -23,7 +23,7 @@ Application will be running on: [http://localhost:4000](http://localhost:4000)
 ```sh
 npm run start
 ```
-Start the application locally using production env params (.env.prod)
+Start the application locally using production env params (.env.production)
 
 ### Build
 ```sh
@@ -60,5 +60,4 @@ make help
 [lodash](https://lodash.com/docs)
 [dotenv](https://github.com/motdotla/dotenv)
 [rxjs](https://github.com/reactivex/rxjs)
-
 [jest](https://facebook.github.io/jest/docs/en/getting-started.html)

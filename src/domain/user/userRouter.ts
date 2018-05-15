@@ -1,9 +1,9 @@
 import { Router } from 'express'
 
+import { will } from '../../application/middlewares'
+
 import { getUsers } from './userController'
 
-const userRouter: Router = Router()
+export const userRouter: Router = Router()
 
-userRouter.get('/users', getUsers)
-
-export default userRouter
+userRouter.get('/users', will(getUsers))

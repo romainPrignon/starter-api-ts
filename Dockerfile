@@ -18,6 +18,7 @@ FROM node:8
 WORKDIR /opt
 
 COPY --from=build /opt/package.json package.json
+COPY --from=build /opt/config config
 COPY --from=build /opt/dist dist
 COPY --from=build /opt/node_modules node_modules
 

@@ -2,11 +2,11 @@ import { Request, Response } from 'express'
 
 import { hostname } from 'os'
 
-import config from '../../../internal/config'
+import config from 'config'
 
 export const getHealth = (req: Request, res: Response): Response => {
   return res.send(`hello from ${hostname()} with
-    OVERRIDE_BY_ENV: ${config.OVERRIDE_BY_ENV}
-    SECRET_VAR: ${config.SECRET_VAR}
+    OVERRIDE_BY_ENV: ${config.get('OVERRIDE_BY_ENV')}
+    SECRET_VAR: ${config.get('SECRET_VAR')}
   `)
 }
