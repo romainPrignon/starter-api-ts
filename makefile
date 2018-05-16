@@ -25,7 +25,7 @@ start: ## run a docker image in a specific env ex: make start env=production [ta
 	docker run -it --init \
 		--name ${container_name} \
 		-p 4000:4000 \
-		-v ${PWD}/.env${env}:/opt/.env${env} \
+		-v ${PWD}/.env.${env}:/opt/.env.${env} \
 		${image_name}:${tag} npm run start:${env}
 
 stop: ## stop the latest image ex: make stop
