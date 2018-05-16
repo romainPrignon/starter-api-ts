@@ -20,10 +20,11 @@ npm run dev
 Application will be running on: [http://localhost:4000](http://localhost:4000)
 
 ### Start
+Start the application in a particular environment
 ```sh
-npm run start
+npm run start:<env>
 ```
-Start the application locally using production env params (.env.prod)
+Start the application locally using specific env params (ex: .env.production and config/production.js)
 
 ### Build
 ```sh
@@ -60,5 +61,4 @@ make help
 [lodash](https://lodash.com/docs)
 [dotenv](https://github.com/motdotla/dotenv)
 [rxjs](https://github.com/reactivex/rxjs)
-
 [jest](https://facebook.github.io/jest/docs/en/getting-started.html)

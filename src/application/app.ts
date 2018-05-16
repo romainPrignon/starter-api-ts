@@ -1,14 +1,16 @@
 import express, { Application } from 'express'
-import cors from 'cors'
+import helmet from 'helmet'
+import compression from 'compression'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
-import router from './router'
+import { router } from './router'
 
-const app: Application = express()
+export const app: Application = express()
 
-app.use(cors())
+app.use(helmet())
+app.use(compression())
 app.use(bodyParser.json())
+app.use(cors())
 
 app.use('/', router)
-
-export default app

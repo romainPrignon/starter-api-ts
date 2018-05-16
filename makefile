@@ -21,11 +21,12 @@ dev: ## run a docker image ready for development ex: make dev [tag=1.1.2]
 		-v ${PWD}:/opt \
 		${image_name}:${tag} npm run dev
 
-start: ## run a docker image ex: make start [tag=1.1.2]
-	docker run --rm -dit --init \
+start: ## run a docker image in a specific env ex: make start env=production [tag=1.1.2]
+	docker run -it --init \
 		--name ${container_name} \
 		-p 4000:4000 \
-		${image_name}:${tag} npm run start
+		-v ${PWD}/.env.${env}:/opt/.env.${env} \
+		${image_name}:${tag} npm run start:${env}
 
 stop: ## stop the latest image ex: make stop
 	docker stop ${container_name}

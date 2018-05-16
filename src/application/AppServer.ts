@@ -1,16 +1,20 @@
 import { Application } from 'express'
 import { Server } from 'http'
-import { AppServer } from '../../type/index'
 
-import config from '../../internal/config'
+import config from 'config'
 
-const AppServer = (app: Application): AppServer => {
+type AppServer = {
+  start: () => Promise<Server>
+  stop: () => Promise<Server>
+}
+
+export const AppServer = (app: Application): AppServer => {
   let server: Server
 
   return {
     start: async (): Promise<Server> => {
-      server = app.listen(config.PORT, () => {
-        console.info(`listening on port ${config.PORT}`)
+      server = app.listen(config.get('PORT'), () => {
+        console.info(`listening on port ${config.get('PORT')}`)
       })
 
       return server
@@ -20,4 +24,3 @@ const AppServer = (app: Application): AppServer => {
     }
   }
 }
-export default AppServer

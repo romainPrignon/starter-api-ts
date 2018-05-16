@@ -1,7 +1,6 @@
-import exit from '../internal/exit'
-
-import AppServer from './application/AppServer'
-import app from './application/app'
+import { app } from './application/app'
+import { exit } from './application/exit'
+import { AppServer } from './application/AppServer'
 
 const main = async () => {
   const appServer = AppServer(app)
@@ -29,3 +28,4 @@ process.on('unhandledRejection', (err) => {
 })
 
 main()
+  .catch(err => exit(err))

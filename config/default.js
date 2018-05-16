@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   PORT: 4000,
   ALWAYS_THE_SAME: 'alwaysTheSame',
   OVERRIDE_BY_ENV: 'default',

@@ -1,5 +1,7 @@
 .DS_Store
 .env
+.env.development
+.env.production
 dist/*
 node_modules/
 npm-debug.log*
