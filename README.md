@@ -20,10 +20,11 @@ npm run dev
 Application will be running on: [http://localhost:4000](http://localhost:4000)
 
 ### Start
+Start the application in a particular environment
 ```sh
-npm run start
+npm run start:<env>
 ```
-Start the application locally using production env params (.env.production)
+Start the application locally using specific env params (ex: .env.production and config/production.js)
 
 ### Build
 ```sh

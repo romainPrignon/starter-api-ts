@@ -11,9 +11,10 @@
   "scripts": {
     "build": "rm -rf dist/ && tsc",
     "build:dev": "tsc --noEmit --pretty",
-    "dev": "nodemon -w src -e ts -x 'ts-node --require dotenv/config ./src/index.ts'",
+    "dev": "NODE_ENV=development nodemon -w src -e ts -x 'ts-node --require dotenv/config ./src/index.ts'",
     "lint": "tslint --project tsconfig.json",
-    "start": "node --require dotenv/config dist/index.js dotenv_config_path=.env.production",
+    "start:development": "NODE_ENV=development node --require dotenv/config dist/index.js dotenv_config_path=.env.development",
+    "start:production": "NODE_ENV=production node --require dotenv/config dist/index.js dotenv_config_path=.env.production",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
@@ -36,7 +37,7 @@
     "@types/express": "latest",
     "@types/helmet": "latest",
     "@types/lodash": "latest",
-    "@types/node": "latest",
+    "@types/node": "8.9.4",
     "jest": "latest",
     "nodemon": "latest",
     "ts-node": "latest",
