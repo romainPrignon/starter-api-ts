@@ -15,7 +15,7 @@
     "lint": "tslint --project tsconfig.json",
     "start:development": "NODE_ENV=development node --require dotenv/config dist/index.js dotenv_config_path=.env.development",
     "start:production": "NODE_ENV=production node --require dotenv/config dist/index.js dotenv_config_path=.env.production",
-    "test": "jest",
+    "test": "jest --forceExit",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
   },
@@ -27,8 +27,7 @@
     "dotenv": "latest",
     "express": "latest",
     "helmet": "latest",
-    "lodash": "latest",
-    "rxjs": "beta"
+    "lodash": "latest"
   },
   "devDependencies": {
     "@types/compression": "latest",
@@ -36,10 +35,12 @@
     "@types/cors": "latest",
     "@types/express": "latest",
     "@types/helmet": "latest",
+    "@types/jest": "latest",
     "@types/lodash": "latest",
     "@types/node": "8.9.4",
     "jest": "latest",
     "nodemon": "latest",
+    "ts-jest": "latest",
     "ts-node": "latest",
     "tslint": "latest",
     "tslint-config-standard": "latest",
