@@ -6,11 +6,11 @@ import cors from 'cors'
 
 import { router } from './router'
 
-export const app: Application = express()
+export const application: Application = express()
 
-app.use(helmet())
-app.use(compression())
-app.use(bodyParser.json())
-app.use(cors())
+application.use(helmet())
+application.use(compression())
+application.use(bodyParser.json())
+application.use(cors())
 
-app.use('/', router)
+application.use('/', router)

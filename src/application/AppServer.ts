@@ -1,14 +1,10 @@
-import { Application } from 'express'
 import { Server } from 'http'
+import { Application } from 'express'
+import { AppServer } from './AppServer.d'
 
 import config from 'config'
 
-type AppServer = {
-  start: () => Promise<Server>
-  stop: () => Promise<Server>
-}
-
-export const AppServer = (app: Application): AppServer => {
+export const appServer = (app: Application): AppServer => {
   let server: Server
 
   return {

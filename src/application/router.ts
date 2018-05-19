@@ -1,9 +1,11 @@
 import { Router } from 'express'
 
-import { userRouter } from '../domain/user/userRouter'
-import { healthRouter } from '../domain/health/healthRouter'
+import { will } from './middlewares'
+
+import { getHealth } from '../controllers/healthController'
+import { getUsers } from '../controllers/userController'
 
 export const router: Router = Router()
 
-router.use(userRouter)
-router.use(healthRouter)
+router.get('/users', will(getUsers))
+router.get('/health', will(getHealth))

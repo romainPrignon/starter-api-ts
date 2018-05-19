@@ -1,14 +1,14 @@
-import { app } from './application/app'
+import { application } from './application/application'
 import { exit } from './application/exit'
-import { AppServer } from './application/AppServer'
+import { appServer } from './application/AppServer'
 
 const main = async () => {
-  const appServer = AppServer(app)
+  const app = appServer(application)
 
   try {
-    await appServer.start()
+    await app.start()
   } catch (err) {
-    await appServer.stop()
+    await app.stop()
 
     exit(err)
   }
