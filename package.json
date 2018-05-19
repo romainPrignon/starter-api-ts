@@ -20,31 +20,31 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "body-parser": "latest",
-    "compression": "latest",
-    "config": "latest",
-    "cors": "latest",
-    "dotenv": "latest",
-    "express": "latest",
-    "helmet": "latest",
-    "lodash": "latest"
+    "body-parser": "1.18.3",
+    "compression": "1.7.2",
+    "config": "1.30.0",
+    "cors": "2.8.4",
+    "dotenv": "5.0.1",
+    "express": "4.16.3",
+    "helmet": "3.12.1",
+    "lodash": "4.17.10"
   },
   "devDependencies": {
-    "@types/compression": "latest",
-    "@types/config": "latest",
-    "@types/cors": "latest",
-    "@types/express": "latest",
-    "@types/helmet": "latest",
-    "@types/jest": "latest",
-    "@types/lodash": "latest",
+    "@types/compression": "0.0.36",
+    "@types/config": "0.0.34",
+    "@types/cors": "2.8.4",
+    "@types/express": "4.11.1",
+    "@types/helmet": "0.0.37",
+    "@types/jest": "22.2.3",
+    "@types/lodash": "4.14.109",
     "@types/node": "8.9.4",
-    "jest": "latest",
-    "nodemon": "latest",
-    "ts-jest": "latest",
-    "ts-node": "latest",
-    "tslint": "latest",
-    "tslint-config-standard": "latest",
-    "typescript": "latest"
+    "jest": "22.4.4",
+    "nodemon": "1.17.4",
+    "ts-jest": "22.4.6",
+    "ts-node": "6.0.3",
+    "tslint": "5.10.0",
+    "tslint-config-standard": "7.0.0",
+    "typescript": "2.8.3"
   },
   "optionalDependencies": {
     "husky": "next"
