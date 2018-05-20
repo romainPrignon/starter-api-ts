@@ -25,4 +25,4 @@ RUN npm run install:prod
 ENV PATH=/opt/node_modules/.bin:$PATH
 USER node
 
-CMD ["npm", "start"]
+CMD ["npm"]
