@@ -12,9 +12,11 @@
     "build": "rm -rf dist/ && tsc",
     "build:dev": "tsc --noEmit --pretty",
     "dev": "NODE_ENV=development nodemon -w src -e ts -x 'ts-node --require dotenv/config ./src/index.ts'",
+    "install:dev": "rm -rf node_modules && npm install --dev-only --no-optional --no-package-lock",
+    "install:prod": "rm -rf node_modules && npm install --production --no-optional --no-package-lock",
     "lint": "tslint --project tsconfig.json",
-    "start:development": "NODE_ENV=development node --require dotenv/config dist/index.js dotenv_config_path=.env.development",
-    "start:production": "NODE_ENV=production node --require dotenv/config dist/index.js dotenv_config_path=.env.production",
+    "start:dev": "NODE_ENV=development node --require dotenv/config dist/index.js dotenv_config_path=.env.dev",
+    "start:prod": "NODE_ENV=production node --require dotenv/config dist/index.js dotenv_config_path=.env.prod",
     "test": "jest --forceExit",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"

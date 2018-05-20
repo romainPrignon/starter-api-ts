@@ -1,5 +1,4 @@
-export type CodeError = {code: string}
-export type EnhancedError = Error & CodeError
+import { EnhancedError } from './raise.d'
 
 export const raise = (code: string, message: string): never => {
   const err = new Error(message) as EnhancedError
