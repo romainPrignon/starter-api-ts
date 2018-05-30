@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  api:
+    image: romainprignon/starter-api-ts:${API_TAG-0.4.0}
+    container_name: romainprignon_starter-stack_api
+    command: npm run start:${API_ENV-prod}
+    ports:
+      - 4000
+    depends_on:
+      - db
+    volumes:
+      - type: volume
+        source: api
+        target: /opt
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 3s
+        max_attempts: 3
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
+
+volumes:
+  api: {}
