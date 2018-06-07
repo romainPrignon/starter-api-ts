@@ -2,12 +2,12 @@ version: '3.5'
 
 services:
   api:
-    image: romainprignon/starter-api-ts:${API_TAG-0.4.0}
-    container_name: romainprignon_starter-stack_api
+    image: romainprignon/starter-api-ts:latest
+    container_name: starter-api-ts_api
     command: npm run start:local
+    external_links:
+      - db
     ports:
       - 4000:4000
     volumes:
       - .:/opt
-    depends_on:
-      - db
