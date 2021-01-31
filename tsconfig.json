@@ -1,19 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2020", // node 14
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist",
+    "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true, // TODO: check
     "declaration": true,
     "sourceMap": true,
+    "removeComments": false,
     "esModuleInterop": true,
     "strict": true,
+    "noImplicitReturns": true,
     "lib": [
-      "es2018"
-    ]
+      "es2020"
+    ],
+    "paths": { // needed to use npm link with TS apparently
+      "@romainprignon/utils": [
+        "node_modules/@romainprignon/utils/src"
+      ]
+    }
   },
   "include": [
-    "**/src/*",
-    "**/type/*"
+    "spec/**/*",
+    "src/**/*",
+    "type/**/*",
   ]
 }

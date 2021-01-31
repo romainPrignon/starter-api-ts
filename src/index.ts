@@ -2,7 +2,7 @@ import { application } from './application/application'
 import { exit } from './application/exit'
 import { appServer } from './application/AppServer'
 
-const main = async () => {
+export const main = async () => {
   const app = appServer(application)
 
   try {
@@ -24,7 +24,7 @@ process.on('uncaughtException', (err) => {
   exit(err)
 })
 process.on('unhandledRejection', (err) => {
-  exit(err)
+  exit(err as Error)
 })
 
 main()

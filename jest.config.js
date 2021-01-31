@@ -1,22 +1,23 @@
 module.exports = {
+  preset: 'ts-jest',
   testEnvironment: 'node',
-  coverageReporters: [
-    'text'
+  testMatch: [
+    '**/src/**/*.test.ts',
+    '**/spec/**/*.spec.ts',
   ],
   coverageThreshold: {
     global: {
-      functions: 80,
-      lines: 80
+      functions: 0,
+      lines: 0,
+      branches: 0,
+      statements: 0,
     }
   },
-  moduleFileExtensions: [
-    'ts',
-    'js'
+  coverageReporters: [
+    "text-summary",
+    "html"
   ],
-  transform: {
-    '^.+\\.(ts)$': 'ts-jest'
-  },
-  testMatch: [
-    '**/*.test.(ts)'
+  collectCoverageFrom: [
+    'src/**/*.{js,ts}',
   ]
 }

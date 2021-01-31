@@ -1,26 +1,27 @@
-FROM node:8 as build
+FROM node:14 as build
 
 WORKDIR /opt
 
-COPY package.json package.json
-COPY tsconfig.json tsconfig.json
 COPY config config
-COPY internal internal
 COPY src src
 COPY type type
+COPY package-lock.json package-lock.json
+COPY package.json package.json
+COPY tsconfig.json tsconfig.json
 
-RUN npm run install:dev
+RUN npm run install --on dev depenedency
 RUN npm run build
 
-FROM node:8
+FROM node:14
 
 WORKDIR /opt
 
-COPY --from=build /opt/package.json package.json
-COPY --from=build /opt/config config
 COPY --from=build /opt/dist dist
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+# COPY --from=build /opt/config config
 
-RUN npm run install:prod
+RUN npm run install:prod --only prod dependenct
 
 ENV PATH=/opt/node_modules/.bin:$PATH
 USER node
