@@ -2,7 +2,7 @@ import { application } from './application/application'
 import { exit } from './application/exit'
 import { appServer } from './application/AppServer'
 
-export const main = async () => {
+export const main = async (): Promise<void> => {
   const app = appServer(application)
 
   try {

@@ -26,7 +26,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
 
     'functional/immutable-data': ['error', {
-      ignorePattern: 'this.'
+      ignorePattern: ['this.', 'module.exports']
     }],
     'functional/no-let': 'off',
     'functional/prefer-readonly-type': 'off'

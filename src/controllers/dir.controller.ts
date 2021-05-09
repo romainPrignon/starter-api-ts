@@ -20,14 +20,28 @@ async function getDir (req: GetDirRequest, res: GetDirResponse): Promise<GetDirR
 }
 
 async function postDir (req: Request, res: Response): Promise<Response> {
-  // check path
-  // const dirInfos = await dirService.findByPath(path)
-
+  // const { path: pathArg } = req.query
+  // const path = isPath(pathArg)
+  // const dirInfos = toHttp(toEntity(await dirService.findByPath(path)))
+  //
   return res.json()
 }
 
 // for postDir
-// function toEntity () {}
+// function toEntity (dir: Record<string, any>): Inode {
+//   return {
+//     owner: dir.owner,
+//     group: dir.group,
+//     label: dir.label,
+//     date: dir.date,
+//     permission: dir.permission
+//   }
+// }
+
+// type Path = `/${string}`
+// const isPath = (maybePath: any): Path => {
+//   return maybePath
+// }
 
 function toHttp (inode: Inode): HttpInode {
   return {

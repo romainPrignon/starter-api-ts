@@ -9,7 +9,7 @@ COPY package-lock.json package-lock.json
 COPY package.json package.json
 COPY tsconfig.json tsconfig.json
 
-RUN npm run install --on dev depenedency
+RUN npm ci
 RUN npm run build
 
 FROM node:14
@@ -21,7 +21,7 @@ COPY package.json package.json
 COPY package-lock.json package-lock.json
 # COPY --from=build /opt/config config
 
-RUN npm run install:prod --only prod dependenct
+RUN npm ci --production
 
 ENV PATH=/opt/node_modules/.bin:$PATH
 USER node
