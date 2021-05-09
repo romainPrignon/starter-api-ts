@@ -70,7 +70,7 @@ make help
 
 
 ## TODO
-✔  faire passer le projet en node 14 target Es2020 et module es2020 si possible
+✔  faire passer le projet en node 14 target Es2020 et module es2020 si possible => nope, not yet
 ✔ update dependencies to last version
   - do I need to fix the resolution part anymore ?
   - check if all the dependencies are needed
