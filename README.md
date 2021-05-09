@@ -70,6 +70,31 @@ make help
 
 
 ## TODO
+✔  faire passer le projet en node 14 target Es2020 et module es2020 si possible
+✔ update dependencies to last version
+  - do I need to fix the resolution part anymore ?
+  - check if all the dependencies are needed
+    - maybe no need with utils
+- rename appserver into server ? gateway ? httpgateway
+- review hw to use config folder and dependency => find best library for that
+- why todo:infer in will middleware ?
+- remove runtypes for zod
+  - write validate middleware for zod
+- rename health cntroller insto status
+- does getdirrequest and getdirrespnse are the way to go ?
+- create effect layer
+- use utils for optional (take time to make it work)
+- find best practise around toEntity
+- use make-error-cause (in controller for example)
+- do postdir request
+- review error middleware for 404
+- use arrow function everywhere !!
+- use . notation for file name
+- faire les tests 
+- put application code into it's own library (application = tools = platform: choose)
+- dockerfiles should use two layer, npm ci dev and prod
+- use pino
+
 - use APP_ENV instead off node_env
 - brand instead of constraint ?
 - import romainprignon/utils => faire un npm link et travailler directemnt sur les guard linux path dans fs
