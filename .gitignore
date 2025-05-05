@@ -1,7 +1,5 @@
-.DS_Store
-.env
-.env.dev
-.env.prod
-dist/*
+coverage/
+dist/
 node_modules/
-npm-debug.log*
+.env
+npm-debug.log
