@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2022",
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist",
@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "strict": true,
     "lib": [
-      "es2018"
+      "es2022"
     ]
   },
   "include": [
